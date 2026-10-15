@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cadastre seu bairro e receba avisos de coleta do Recicla-me por WhatsApp.">
+  <title>Recicla-me | Cadastrar</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+  <script src="formulario.js" defer></script>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header>
+    <div id="topo">
+      <a class="marca" href="index.html"><span>♻ Recicla-me</span></a>
+      <button type="button" id="menu-btn" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+      <nav id="menu-principal" class="mini-nav" aria-label="Navegação principal">
+        <a href="index.html">Início</a><a href="sobre.html">Sobre</a>
+        <a href="coleta.html">Coleta</a><a href="cadastrar.html" aria-current="page">Cadastrar</a>
+        <button type="button" id="tema-btn" aria-pressed="false">🌙 Modo escuro</button>
+      </nav>
+    </div>
+  </header>
+  <main id="conteudo" tabindex="-1">
+    <section id="cadastro" aria-labelledby="titulo-cadastro">
+      <h1 id="titulo-cadastro">Quer receber alertas?</h1>
+      <p>Cadastre seu bairro e receba avisos antes da coleta. Os campos com <span class="obrigatorio" aria-hidden="true">*</span> são obrigatórios.</p>
+      <form class="form-cadastro" action="#" method="post" novalidate>
+        <fieldset>
+          <legend>Seus dados</legend>
+          <div class="campo">
+            <label for="nome">Nome completo <span class="obrigatorio" aria-hidden="true">*</span></label>
+            <input type="text" id="nome" name="nome" autocomplete="name" required aria-describedby="erro-nome">
+            <p class="mensagem-erro" id="erro-nome" aria-live="polite"></p>
+          </div>
+          <div class="campo">
+            <label for="whatsapp">WhatsApp com DDD <span class="obrigatorio" aria-hidden="true">*</span></label>
+            <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" placeholder="(47) 99999-9999" maxlength="15" inputmode="numeric" required aria-describedby="erro-whatsapp">
+            <p class="mensagem-erro" id="erro-whatsapp" aria-live="polite"></p>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Sua coleta</legend>
+          <div class="campo">
+            <label for="bairro">Bairro <span class="obrigatorio" aria-hidden="true">*</span></label>
+            <input type="text" id="bairro" name="bairro" required aria-describedby="erro-bairro">
+            <p class="mensagem-erro" id="erro-bairro" aria-live="polite"></p>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Quais alertas você quer receber?</legend>
+          <div class="campo campo-check"><input type="checkbox" id="alerta-comum" name="alertas" value="comum" checked><label for="alerta-comum">Lixo comum</label></div>
+          <div class="campo campo-check"><input type="checkbox" id="alerta-reciclavel" name="alertas" value="reciclavel" checked><label for="alerta-reciclavel">Reciclável</label></div>
+          <div class="campo campo-check"><input type="checkbox" id="alerta-entulho" name="alertas" value="entulho"><label for="alerta-entulho">Entulho</label></div>
+        </fieldset>
+        <div class="campo campo-check">
+          <input type="checkbox" id="autorizo" name="autorizo" required aria-describedby="erro-autorizo">
+          <label for="autorizo">Autorizo o Recicla-me a me enviar avisos por WhatsApp <span class="obrigatorio" aria-hidden="true">*</span></label>
+        </div>
+        <p class="mensagem-erro" id="erro-autorizo" aria-live="polite"></p>
+        <button type="submit" class="botao">Ativar alertas</button>
+        <p id="mensagem-sucesso" class="mensagem" role="status"></p>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <h2 class="rodape-titulo">Fale com a gente</h2>
+    <nav aria-label="Contato e redes sociais"><ul class="contatos">
+      <li><a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp (abre em nova aba)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.4-.2-2.6.7.7-2.5-.2-.4A8 8 0 0 1 12 4zm-3 3.5c-.3 0-.6.3-.8.6-.3.4-.6 1-.4 1.9.3 1.2 1.2 2.6 2.7 3.9 1.5 1.3 2.9 1.8 4 2 .8.1 1.6-.3 2-.8.2-.3.3-.7.1-.9l-1.6-.9c-.2-.1-.5 0-.7.2l-.5.6c-.2.2-.4.2-.6.1-.9-.4-2-1.2-2.7-2.3-.1-.2-.1-.4 0-.6l.4-.6c.1-.2.1-.4 0-.6l-.8-1.6c-.1-.3-.3-.5-.6-.5z"/></svg><span>WhatsApp</span></a></li>
+      <li><a href="https://www.facebook.com/reciclame" target="_blank" rel="noopener noreferrer" aria-label="Facebook (abre em nova aba)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path fill="currentColor" d="M13.4 20v-7h2.3l.4-2.8h-2.7V8.5c0-.8.2-1.3 1.4-1.3h1.4V4.7c-.3 0-1.1-.1-2.1-.1-2.1 0-3.5 1.3-3.5 3.6v2H8.3V13h2.3v7z"/></svg><span>Facebook</span></a></li>
+      <li><a href="mailto:contato@reciclame.com.br" aria-label="E-mail"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="2" y="5" width="20" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>E-mail</span></a></li>
+    </ul></nav>
+    <p>♻ Recicla-me — Canoinhas/SC — 2026</p><p>Jovem Programador · Senac SC</p>
+  </footer>
+</body>
+</html>

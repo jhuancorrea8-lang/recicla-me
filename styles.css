@@ -1,0 +1,1117 @@
+/* ===========================
+   RECICLA-ME — styles.css
+   Fundo do caminhão em todo o site
+   =========================== */
+
+:root {
+  --verde-escuro: #1A6632;
+  --verde-claro: #C0DD97;
+  --azul: #003087;
+  --neutro: #595959;
+  --fundo: #F2F2F2;
+  --branco: #FFFFFF;
+  --verde-suave: #EAF5EC;
+  --erro: #B3261E;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--azul);
+  outline-offset: 3px;
+}
+
+header :focus-visible,
+footer :focus-visible {
+  outline-color: var(--branco);
+}
+
+.pular {
+  position: absolute;
+  top: -60px;
+  left: 8px;
+  z-index: 100;
+  padding: 10px 14px;
+  color: var(--azul);
+  background-color: var(--branco);
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.pular:focus {
+  top: 8px;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--neutro);
+  line-height: 1.6;
+  overflow-x: clip;
+
+  /* ===========================
+     FUNDO DO CAMINHÃO — SITE TODO
+     =========================== */
+
+  background-image:
+    linear-gradient(
+      rgba(242, 242, 242, 0.78),
+      rgba(242, 242, 242, 0.78)
+    ),
+    url("imagens/fundo.jpg");
+
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===========================
+   CABEÇALHO — flexbox
+   =========================== */
+
+header {
+  background-color: #1A6632;
+  padding: 16px 24px;
+  position: relative;
+  z-index: 10;
+}
+
+#topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+#topo span {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--branco);
+}
+
+.marca {
+  text-decoration: none;
+}
+
+#topo nav {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 16px;
+  gap: 12px;
+}
+
+#topo nav.aberto {
+  display: flex;
+}
+
+#topo nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+#topo nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+#topo nav a[aria-current="page"] {
+  color: var(--branco);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+/* ===========================
+   MENU SANDUÍCHE
+   =========================== */
+
+#menu-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+#menu-btn span {
+  height: 3px;
+  width: 100%;
+  background-color: var(--branco);
+  border-radius: 2px;
+}
+
+#menu-btn:focus-visible {
+  outline: 3px solid var(--branco);
+  outline-offset: 5px;
+}
+
+/* ===========================
+   ESTRUTURA GERAL
+   =========================== */
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 14px;
+}
+
+/*
+   As seções ficam translúcidas para
+   o caminhão continuar aparecendo
+   no fundo.
+*/
+
+section {
+  background-color: rgba(255, 255, 255, 0.91);
+  border-radius: 12px;
+  padding: 20px 18px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 18px rgba(20, 60, 30, 0.12);
+  backdrop-filter: blur(2px);
+}
+
+/* ===========================
+   HERO / APRESENTAÇÃO
+   =========================== */
+
+.pagina-inicio .apresentacao {
+  width: 100vw;
+  min-height: 500px;
+
+  margin-left: calc(50% - 50vw);
+
+  padding: 60px 22px;
+
+    /* A camada escura mantém o texto legível sobre o fundo do site. */
+
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+
+  border-left: none;
+  border-radius: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: white;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.65);
+}
+
+.pagina-inicio .apresentacao h1 {
+  color: white;
+}
+
+.pagina-inicio .apresentacao h2 {
+  color: white;
+}
+
+.pagina-inicio .apresentacao p {
+  color: white;
+}
+
+.pagina-inicio .apresentacao .sobretitulo {
+  color: #FFFFFF;
+}
+
+/* ===========================
+   CARDS DA PÁGINA INICIAL
+   =========================== */
+
+.cards-inicio .card {
+  min-height: 185px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards-inicio .card img.ilustracao-card {
+  display: block;
+  width: min(100%, 200px);
+  height: 124px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  margin: 0 auto 12px;
+}
+
+.chamada-cadastro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  background-color: rgba(234, 245, 236, 0.94);
+}
+
+.chamada-conteudo {
+  flex: 0 1 auto;
+}
+
+.ilustracao-chamada {
+  display: block;
+  width: min(100%, 220px);
+  height: auto;
+  flex: 0 1 auto;
+}
+
+.chamada-conteudo h2,
+.chamada-conteudo p {
+  margin-bottom: 12px;
+}
+
+.botao-link {
+  display: inline-block;
+  padding: 11px 22px;
+  color: var(--branco);
+  background-color: var(--verde-escuro);
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.botao-link:hover {
+  background-color: #145228;
+}
+
+/* ===========================
+   TÍTULOS E TEXTOS
+   =========================== */
+
+h1 {
+  font-size: 24px;
+  color: var(--verde-escuro);
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 22px;
+  color: var(--azul);
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 16px;
+  color: var(--verde-escuro);
+  margin-bottom: 6px;
+}
+
+.card h2 {
+  font-size: 16px;
+  color: var(--verde-escuro);
+  margin-bottom: 6px;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+/* ===========================
+   CARDS — flexbox
+   =========================== */
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  flex: 1 1 220px;
+  background-color: rgba(234, 245, 236, 0.94);
+  border-radius: 8px;
+  padding: 16px 20px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 220 / 150;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin-bottom: 0;
+}
+
+/* ===========================
+   TABELA — horários de coleta
+   =========================== */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.94);
+}
+
+#horarios {
+  overflow: hidden;
+}
+
+.tabela-responsiva {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.tabela-responsiva:focus-visible {
+  outline: 3px solid var(--azul);
+  outline-offset: 3px;
+}
+
+.tabela-responsiva table {
+  min-width: 540px;
+}
+
+th {
+  background-color: rgba(26, 102, 50, 0.96);
+  color: var(--branco);
+  padding: 12px 16px;
+  text-align: left;
+}
+
+td {
+  padding: 12px 16px;
+  border: 1px solid #DDDDDD;
+}
+
+tbody th[scope="row"] {
+  padding: 12px 16px;
+  border: 1px solid #DDDDDD;
+  color: inherit;
+  background: transparent;
+  font-weight: normal;
+  text-align: left;
+}
+
+tbody tr:hover {
+  background-color: var(--verde-claro);
+}
+
+.semana-coleta {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  list-style: none;
+}
+
+.semana-coleta li {
+  min-width: 0;
+  padding: 14px;
+  background-color: rgba(234, 245, 236, 0.94);
+  border-radius: 8px;
+}
+
+.semana-coleta strong,
+.semana-coleta span {
+  display: block;
+}
+
+.semana-coleta strong {
+  margin-bottom: 4px;
+  color: var(--verde-escuro);
+}
+
+/* ===========================
+   LISTA — como funciona
+   =========================== */
+
+ol {
+  padding-left: 24px;
+}
+
+ol li {
+  margin-bottom: 8px;
+}
+
+/* ===========================
+   CADASTRO — formulário
+   =========================== */
+
+#cadastro {
+  text-align: center;
+  background-color: rgba(234, 245, 236, 0.94);
+}
+
+.form-cadastro {
+  width: 100%;
+  max-width: 640px;
+  margin: 24px auto 0;
+  padding: 20px;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.97);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 48, 135, 0.12);
+}
+
+.form-cadastro fieldset {
+  margin-bottom: 28px;
+  border: 0;
+  min-width: 0;
+}
+
+.form-cadastro legend {
+  width: 100%;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--azul);
+  border-bottom: 2px solid var(--verde-claro);
+}
+
+.form-cadastro .campo {
+  margin-bottom: 16px;
+}
+
+.form-cadastro label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.obrigatorio {
+  color: var(--erro);
+}
+
+.form-cadastro input[type="text"],
+.form-cadastro input[type="tel"] {
+  display: block;
+  width: 100%;
+  padding: 13px 15px;
+  font: inherit;
+  color: #333333;
+  background-color: #FAFAFA;
+  border: 1.5px solid #767676;
+  border-radius: 10px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-cadastro input::placeholder {
+  color: var(--neutro);
+  opacity: 1;
+}
+
+.form-cadastro input[type="text"]:hover,
+.form-cadastro input[type="tel"]:hover {
+  border-color: var(--azul);
+}
+
+.form-cadastro input[type="text"]:focus,
+.form-cadastro input[type="tel"]:focus {
+  background-color: var(--branco);
+  border-color: var(--azul);
+  box-shadow: 0 0 0 3px rgba(0, 48, 135, 0.25);
+  outline: 3px solid var(--azul);
+  outline-offset: 2px;
+}
+
+.form-cadastro input:user-invalid {
+  border-color: var(--erro);
+}
+
+.form-cadastro .campo-check {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.form-cadastro .campo-check input {
+  width: 21px;
+  height: 21px;
+  flex-shrink: 0;
+  accent-color: var(--verde-escuro);
+  cursor: pointer;
+}
+
+.form-cadastro .campo-check label {
+  margin: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.form-cadastro .campo-check input:focus-visible,
+.form-cadastro .botao:focus-visible {
+  outline: 3px solid var(--azul);
+  outline-offset: 3px;
+}
+
+.form-cadastro fieldset:nth-of-type(3) .campo-check {
+  padding: 12px 16px;
+  border: 1.5px solid #767676;
+  border-radius: 10px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.form-cadastro fieldset:nth-of-type(3) .campo-check:hover {
+  border-color: var(--verde-escuro);
+}
+
+.form-cadastro fieldset:nth-of-type(3) .campo-check:has(input:checked) {
+  background-color: var(--verde-suave);
+  border-color: var(--verde-escuro);
+}
+
+.form-cadastro fieldset:nth-of-type(3) .campo-check label {
+  flex: 1;
+  font-weight: bold;
+}
+
+.form-cadastro .botao {
+  display: block;
+  width: 100%;
+  margin-top: 24px;
+  padding: 16px 24px;
+  font: inherit;
+  font-size: 17px;
+  font-weight: bold;
+  color: var(--branco);
+  background-color: var(--azul);
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.form-cadastro .botao:hover {
+  background-color: #002163;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 48, 135, 0.3);
+}
+
+.form-cadastro .botao:active {
+  transform: translateY(0);
+}
+
+/* ===========================
+   VÍDEOS DO YOUTUBE
+   =========================== */
+
+.video-embed {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  margin: 16px auto 0;
+  aspect-ratio: 16 / 9;
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* ===========================
+   RODAPÉ
+   =========================== */
+
+footer {
+  background-color: rgba(26, 61, 26, 0.96);
+  text-align: center;
+  padding: 24px;
+}
+
+footer p {
+  color: var(--verde-claro);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.rodape-titulo {
+  margin-bottom: 16px;
+  font-size: 20px;
+  color: var(--branco);
+}
+
+.contatos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  list-style: none;
+}
+
+.contatos a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  color: var(--verde-claro);
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid var(--verde-claro);
+  border-radius: 999px;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.contatos a:hover {
+  color: #1A3D1A;
+  background-color: var(--verde-claro);
+  transform: translateY(-2px);
+}
+
+.contatos a:focus-visible {
+  outline: 3px solid var(--branco);
+  outline-offset: 3px;
+}
+
+/* ===========================
+   JAVASCRIPT
+   =========================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.escondido {
+  display: none;
+}
+
+.botao-js {
+  display: inline-block;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding: 10px 24px;
+  font: inherit;
+  font-weight: bold;
+  color: var(--branco);
+  background-color: var(--verde-escuro);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.botao-js:hover {
+  background-color: #145228;
+}
+
+.botao-js:focus-visible {
+  outline: 3px solid var(--azul);
+  outline-offset: 3px;
+}
+
+/* ===========================
+   MENSAGEM DO FORMULÁRIO
+   =========================== */
+
+.mensagem {
+  margin: 0;
+}
+
+.mensagem:not(:empty) {
+  margin-top: 16px;
+  padding: 14px 16px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.mensagem.sucesso {
+  color: #14461F;
+  background-color: #E3F3E4;
+  border: 2px solid var(--verde-escuro);
+}
+
+.mensagem.erro {
+  color: #7A1712;
+  background-color: #FDECEA;
+  border: 2px solid #B3261E;
+}
+
+/* ===========================
+   BOTÃO DO MODO ESCURO
+   =========================== */
+
+#tema-btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font: inherit;
+  font-size: 15px;
+  color: #FFFFFF;
+  background: transparent;
+  border: 2px solid #FFFFFF;
+  border-radius: 999px;
+  padding: 4px 14px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+#tema-btn:hover {
+  color: var(--verde-escuro);
+  background-color: var(--verde-claro);
+}
+
+#tema-btn:focus-visible {
+  outline: 3px solid var(--branco);
+  outline-offset: 3px;
+}
+
+/* ===========================
+   MODO ESCURO
+   =========================== */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --fundo: #111611;
+  --neutro: #D3DBD3;
+  --verde-suave: #263326;
+}
+
+[data-theme="dark"] :focus-visible {
+  outline-color: #9DB8FF;
+}
+
+[data-theme="dark"] header :focus-visible,
+[data-theme="dark"] footer :focus-visible {
+  outline-color: #FFFFFF;
+}
+
+[data-theme="dark"] body {
+  background-image:
+    linear-gradient(
+      rgba(17, 22, 17, 0.72),
+      rgba(17, 22, 17, 0.72)
+    ),
+    url("imagens/fundo.jpg");
+}
+
+[data-theme="dark"] section {
+  background-color: rgba(27, 35, 27, 0.93);
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] #cadastro {
+  background-color: rgba(38, 51, 38, 0.94);
+}
+
+[data-theme="dark"] .chamada-cadastro,
+[data-theme="dark"] .semana-coleta li {
+  background-color: rgba(38, 51, 38, 0.94);
+}
+
+[data-theme="dark"] .sobretitulo,
+[data-theme="dark"] .semana-coleta strong {
+  color: #8FD19E;
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h3 {
+  color: #8FD19E;
+}
+
+[data-theme="dark"] h2 {
+  color: #9DB8FF;
+}
+
+[data-theme="dark"] .card h2 {
+  color: #8FD19E;
+}
+
+[data-theme="dark"] td {
+  border-color: #3A463A;
+}
+
+[data-theme="dark"] tbody th[scope="row"] {
+  border-color: #3A463A;
+}
+
+[data-theme="dark"] tbody tr:hover {
+  background-color: #2C3D2C;
+}
+
+[data-theme="dark"] table {
+  background-color: rgba(20, 27, 20, 0.94);
+}
+
+/* Formulário no modo escuro */
+
+[data-theme="dark"] .form-cadastro {
+  background-color: rgba(20, 27, 20, 0.97);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .form-cadastro legend {
+  color: #9DB8FF;
+  border-bottom-color: #3F6B45;
+}
+
+[data-theme="dark"] .form-cadastro label {
+  color: #E6EDE6;
+}
+
+[data-theme="dark"] .obrigatorio {
+  color: #FF8A80;
+}
+
+[data-theme="dark"] .form-cadastro input[type="text"],
+[data-theme="dark"] .form-cadastro input[type="tel"] {
+  color: #E6EDE6;
+  background-color: #1B231B;
+  border-color: #8A9A8A;
+}
+
+[data-theme="dark"] .form-cadastro input::placeholder {
+  color: #B5C0B5;
+}
+
+[data-theme="dark"] .form-cadastro input[type="text"]:hover,
+[data-theme="dark"] .form-cadastro input[type="tel"]:hover {
+  border-color: #9DB8FF;
+}
+
+[data-theme="dark"] .form-cadastro input[type="text"]:focus,
+[data-theme="dark"] .form-cadastro input[type="tel"]:focus {
+  background-color: #141B14;
+  border-color: #9DB8FF;
+  box-shadow: 0 0 0 3px rgba(157, 184, 255, 0.35);
+  outline-color: #9DB8FF;
+}
+
+[data-theme="dark"] .form-cadastro input:user-invalid {
+  border-color: #FF8A80;
+}
+
+[data-theme="dark"] .form-cadastro fieldset:nth-of-type(3) .campo-check {
+  border-color: #8A9A8A;
+}
+
+[data-theme="dark"] .form-cadastro fieldset:nth-of-type(3) .campo-check:has(input:checked) {
+  background-color: #2C4A2F;
+  border-color: #8FD19E;
+}
+
+[data-theme="dark"] .form-cadastro .campo-check input:focus-visible,
+[data-theme="dark"] .form-cadastro .botao:focus-visible {
+  outline-color: #9DB8FF;
+}
+
+[data-theme="dark"] .form-cadastro .botao {
+  background-color: #2F5FC4;
+}
+
+[data-theme="dark"] .form-cadastro .botao:hover {
+  background-color: #244C9E;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+}
+
+/* ===========================
+   RESPONSIVO
+   =========================== */
+
+@media (min-width: 600px) {
+  .semana-coleta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Telas a partir de tablet */
+
+@media (min-width: 768px) {
+
+  body {
+    background-attachment: fixed;
+    background-position: center center;
+  }
+
+  #topo {
+    flex-wrap: nowrap;
+  }
+
+  #menu-btn {
+    display: none;
+  }
+
+  #topo nav {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    margin-top: 0;
+    gap: 20px;
+  }
+
+  main {
+    padding: 32px 24px;
+  }
+
+  section {
+    padding: 24px 28px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .pagina-inicio .apresentacao {
+    min-height: 600px;
+    padding: 80px 8%;
+  }
+
+  .cards {
+    flex-direction: row;
+  }
+
+  #horarios {
+    overflow: visible;
+  }
+
+  .form-cadastro {
+    padding: 32px;
+    border-radius: 16px;
+  }
+
+  .chamada-cadastro {
+    flex-direction: row;
+    gap: 36px;
+    text-align: left;
+  }
+
+  .ilustracao-chamada {
+    width: min(100%, 240px);
+    flex: 0 1 240px;
+  }
+
+  .chamada-conteudo {
+    flex: 1 1 320px;
+  }
+
+  #horarios {
+    overflow: visible;
+  }
+
+  .tabela-responsiva table {
+    min-width: 0;
+  }
+
+  .form-cadastro fieldset:nth-of-type(1) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+  }
+
+  .form-cadastro fieldset:nth-of-type(1) legend {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .semana-coleta {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* ===========================
+   ACESSIBILIDADE / MOVIMENTO
+   =========================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .form-cadastro input,
+  .form-cadastro .botao,
+  .form-cadastro .campo-check,
+  .contatos a,
+  #tema-btn,
+  .card {
+    transition: none;
+  }
+
+  .form-cadastro .botao:hover,
+  .contatos a:hover,
+  .card:hover {
+    transform: none;
+  }
+}
+
+/* ===========================
+   VALIDAÇÃO DO FORMULÁRIO
+   =========================== */
+
+.mensagem-erro {
+  margin: 0;
+  color: #b00020;
+  font-size: 0.9rem;
+}
+
+.mensagem-erro:not(:empty) {
+  margin-top: 0.25rem;
+}
+
+:root[data-theme="dark"] .mensagem-erro {
+  color: #ff9b9b;
+}
+
+.campo-invalido {
+  border: 2px solid #b00020;
+}
+
+:root[data-theme="dark"] .campo-invalido {
+  border-color: #ff9b9b;
+}
+
+input[type="checkbox"].campo-invalido {
+  outline: 2px solid #b00020;
+  outline-offset: 2px;
+}
+
+:root[data-theme="dark"] input[type="checkbox"].campo-invalido {
+  outline-color: #ff9b9b;
+}
+
+.form-cadastro input[aria-invalid="true"] {
+  border-color: var(--erro);
+  border-width: 2px;
+}
+
+.form-cadastro input[aria-invalid="true"]:focus {
+  border-color: var(--erro);
+  border-width: 2px;
+}
+
+[data-theme="dark"] .form-cadastro input[aria-invalid="true"] {
+  border-color: #FF8A80;
+}
+
+[data-theme="dark"] .form-cadastro input[aria-invalid="true"]:focus {
+  border-color: #FF8A80;
+  border-width: 2px;
+}

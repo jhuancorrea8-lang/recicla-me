@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Consulte os tipos, dias e horários de coleta de resíduos em Canoinhas.">
+  <title>Recicla-me | Coleta</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header>
+    <div id="topo">
+      <a class="marca" href="index.html"><span>♻ Recicla-me</span></a>
+      <button type="button" id="menu-btn" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+      <nav id="menu-principal" class="mini-nav" aria-label="Navegação principal">
+        <a href="index.html">Início</a><a href="sobre.html">Sobre</a>
+        <a href="coleta.html" aria-current="page">Coleta</a><a href="cadastrar.html">Cadastrar</a>
+        <button type="button" id="tema-btn" aria-pressed="false">🌙 Modo escuro</button>
+      </nav>
+    </div>
+  </header>
+  <main id="conteudo" tabindex="-1">
+    <section aria-labelledby="titulo-coleta">
+      <h1 id="titulo-coleta">Tipos de coleta</h1>
+      <div class="cards">
+        <article class="card">
+          <img id="imagem-card" src="imagens/lixo_comum.png" alt="Lixeira verde de lixo comum com resíduos ao redor" width="220" height="150" tabindex="0">
+          <h2>Lixo comum</h2><p>Segunda e quinta-feira.</p>
+        </article>
+        <article class="card">
+          <img id="imagem-reciclavel" src="imagens/lixo_reciclavel.png" alt="Lixeira azul de material reciclável com garrafas, latas e papelão" width="220" height="150" tabindex="0">
+          <h2>Reciclável</h2><p>Terça e sexta-feira.</p>
+        </article>
+        <article class="card">
+          <img id="imagem-entulho" src="imagens/lixo_entulho.png" alt="Caçamba amarela de entulho com tijolos e restos de obra" width="220" height="150" tabindex="0">
+          <h2>Entulho</h2><p>Sob agendamento.</p>
+        </article>
+      </div>
+    </section>
+    <section id="horarios" aria-labelledby="titulo-horarios">
+      <h2 id="titulo-horarios">Horários de coleta</h2>
+      <div class="tabela-responsiva" tabindex="0" role="region" aria-labelledby="titulo-horarios">
+        <table>
+          <caption>Dias e horários de coleta por tipo de resíduo</caption>
+          <thead><tr><th scope="col">Tipo de resíduo</th><th scope="col">Dias da semana</th><th scope="col">Horário</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Lixo comum</th><td>Segunda e quinta-feira</td><td>07h às 11h</td></tr>
+            <tr><th scope="row">Reciclável</th><td>Terça e sexta-feira</td><td>08h às 12h</td></tr>
+            <tr><th scope="row">Entulho</th><td>Sob agendamento</td><td>A combinar</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section aria-labelledby="titulo-semana">
+      <h2 id="titulo-semana">Coleta durante a semana</h2>
+      <ul class="semana-coleta">
+        <li><strong>SEGUNDA</strong><span>Lixo comum</span></li>
+        <li><strong>TERÇA</strong><span>Reciclável</span></li>
+        <li><strong>QUARTA</strong><span>Sem coleta</span></li>
+        <li><strong>QUINTA</strong><span>Lixo comum</span></li>
+        <li><strong>SEXTA</strong><span>Reciclável</span></li>
+        <li><strong>SÁBADO</strong><span>Sem coleta</span></li>
+        <li><strong>DOMINGO</strong><span>Sem coleta</span></li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <h2 class="rodape-titulo">Fale com a gente</h2>
+    <nav aria-label="Contato e redes sociais"><ul class="contatos">
+      <li><a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp (abre em nova aba)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.4-.2-2.6.7.7-2.5-.2-.4A8 8 0 0 1 12 4zm-3 3.5c-.3 0-.6.3-.8.6-.3.4-.6 1-.4 1.9.3 1.2 1.2 2.6 2.7 3.9 1.5 1.3 2.9 1.8 4 2 .8.1 1.6-.3 2-.8.2-.3.3-.7.1-.9l-1.6-.9c-.2-.1-.5 0-.7.2l-.5.6c-.2.2-.4.2-.6.1-.9-.4-2-1.2-2.7-2.3-.1-.2-.1-.4 0-.6l.4-.6c.1-.2.1-.4 0-.6l-.8-1.6c-.1-.3-.3-.5-.6-.5z"/></svg><span>WhatsApp</span></a></li>
+      <li><a href="https://www.facebook.com/reciclame" target="_blank" rel="noopener noreferrer" aria-label="Facebook (abre em nova aba)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path fill="currentColor" d="M13.4 20v-7h2.3l.4-2.8h-2.7V8.5c0-.8.2-1.3 1.4-1.3h1.4V4.7c-.3 0-1.1-.1-2.1-.1-2.1 0-3.5 1.3-3.5 3.6v2H8.3V13h2.3v7z"/></svg><span>Facebook</span></a></li>
+      <li><a href="mailto:contato@reciclame.com.br" aria-label="E-mail"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="2" y="5" width="20" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>E-mail</span></a></li>
+    </ul></nav>
+    <p>♻ Recicla-me — Canoinhas/SC — 2026</p><p>Jovem Programador · Senac SC</p>
+  </footer>
+</body>
+</html>

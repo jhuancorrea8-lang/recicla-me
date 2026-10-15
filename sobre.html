@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Saiba como o Recicla-me ajuda moradores de Canoinhas a acompanhar a coleta de resíduos.">
+  <title>Recicla-me | Sobre</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header>
+    <div id="topo">
+      <a class="marca" href="index.html"><span>♻ Recicla-me</span></a>
+      <button type="button" id="menu-btn" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+      <nav id="menu-principal" class="mini-nav" aria-label="Navegação principal">
+        <a href="index.html">Início</a><a href="sobre.html" aria-current="page">Sobre</a>
+        <a href="coleta.html">Coleta</a><a href="cadastrar.html">Cadastrar</a>
+        <button type="button" id="tema-btn" aria-pressed="false">🌙 Modo escuro</button>
+      </nav>
+    </div>
+  </header>
+  <main id="conteudo" tabindex="-1">
+    <section aria-labelledby="titulo-sobre">
+      <h1 id="titulo-sobre">Sobre o Recicla-me</h1>
+      <p>O Recicla-me foi criado para ajudar os moradores de Canoinhas a saberem os dias corretos de coleta e evitar o descarte incorreto de resíduos.</p>
+    </section>
+    <section aria-labelledby="titulo-por-que">
+      <h2 id="titulo-por-que">Por que o Recicla-me?</h2>
+      <p>Moradores frequentemente descartam o lixo no dia errado por falta de informação.</p>
+    </section>
+    <section aria-labelledby="titulo-como-funciona">
+      <h2 id="titulo-como-funciona">Como funciona</h2>
+      <ol>
+        <li>Acesse o site do Recicla-me</li><li>Preencha seu nome, WhatsApp e bairro e autorize o envio dos avisos</li>
+        <li>Selecione o seu bairro</li><li>Clique em Ativar alertas</li>
+        <li>Pronto — você vai receber os avisos</li>
+      </ol>
+    </section>
+    <section id="video-explicativo" aria-labelledby="titulo-video-separacao">
+      <h2 id="titulo-video-separacao">Veja como separar o lixo corretamente</h2>
+      <div class="video-embed"><iframe src="https://www.youtube.com/embed/wgPn3kZZtIY" title="Como separar o lixo corretamente" loading="lazy" allowfullscreen></iframe></div>
+      <a href="https://www.youtube.com/watch?v=wgPn3kZZtIY" target="_blank" rel="noopener noreferrer">Assistir no YouTube (abre em nova aba)</a>
+    </section>
+    <section id="video-youtube" aria-labelledby="titulo-video-canal">
+      <h2 id="titulo-video-canal">Assista no nosso canal</h2>
+      <!-- TODO: descrever o vídeo -->
+      <div class="video-embed"><iframe src="https://www.youtube.com/embed/zdRrToUH61U" title="Vídeo sobre reciclagem e coleta seletiva" loading="lazy" allowfullscreen></iframe></div>
+      <a href="https://www.youtube.com/watch?v=zdRrToUH61U" target="_blank" rel="noopener noreferrer">Assistir no YouTube (abre em nova aba)</a>
+    </section>
+  </main>
+  <footer>
+    <h2 class="rodape-titulo">Fale com a gente</h2>
+    <nav aria-label="Contato e redes sociais"><ul class="contatos">
+      <li><a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp (abre em nova aba)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.4-.2-2.6.7.7-2.5-.2-.4A8 8 0 0 1 12 4zm-3 3.5c-.3 0-.6.3-.8.6-.3.4-.6 1-.4 1.9.3 1.2 1.2 2.6 2.7 3.9 1.5 1.3 2.9 1.8 4 2 .8.1 1.6-.3 2-.8.2-.3.3-.7.1-.9l-1.6-.9c-.2-.1-.5 0-.7.2l-.5.6c-.2.2-.4.2-.6.1-.9-.4-2-1.2-2.7-2.3-.1-.2-.1-.4 0-.6l.4-.6c.1-.2.1-.4 0-.6l-.8-1.6c-.1-.3-.3-.5-.6-.5z"/></svg><span>WhatsApp</span></a></li>
+      <li><a href="https://www.facebook.com/reciclame" target="_blank" rel="noopener noreferrer" aria-label="Facebook (abre em nova aba)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path fill="currentColor" d="M13.4 20v-7h2.3l.4-2.8h-2.7V8.5c0-.8.2-1.3 1.4-1.3h1.4V4.7c-.3 0-1.1-.1-2.1-.1-2.1 0-3.5 1.3-3.5 3.6v2H8.3V13h2.3v7z"/></svg><span>Facebook</span></a></li>
+      <li><a href="mailto:contato@reciclame.com.br" aria-label="E-mail"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="2" y="5" width="20" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>E-mail</span></a></li>
+    </ul></nav>
+    <p>♻ Recicla-me — Canoinhas/SC — 2026</p><p>Jovem Programador · Senac SC</p>
+  </footer>
+</body>
+</html>
