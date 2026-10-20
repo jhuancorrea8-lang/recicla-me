@@ -33,30 +33,32 @@
     }
 
     if (botaoMenu && menuPrincipal) {
-      function fecharMenu() {
-        menuPrincipal.classList.remove('aberto');
-        botaoMenu.setAttribute('aria-expanded', 'false');
-        botaoMenu.setAttribute('aria-label', 'Abrir menu');
-      }
+  function fecharMenu() {
+    menuPrincipal.classList.remove('aberto');
+    botaoMenu.setAttribute('aria-expanded', 'false');
+  }
 
-      botaoMenu.addEventListener('click', function () {
-        var aberto = menuPrincipal.classList.toggle('aberto');
-        botaoMenu.setAttribute('aria-expanded', aberto ? 'true' : 'false');
-        botaoMenu.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
-      });
+  botaoMenu.addEventListener('click', function () {
+    var aberto = menuPrincipal.classList.toggle('aberto');
+    botaoMenu.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+  });
 
-      menuPrincipal.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', fecharMenu);
-      });
+  menuPrincipal.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', fecharMenu);
+  });
 
-      document.addEventListener('keydown', function (evento) {
-        if (evento.key === 'Escape' && menuPrincipal.classList.contains('aberto')) {
-          fecharMenu();
-          botaoMenu.focus();
-        }
-      });
+  document.addEventListener('keydown', function (evento) {
+    if (evento.key === 'Escape' && menuPrincipal.classList.contains('aberto')) {
+      fecharMenu();
+      botaoMenu.focus();
     }
+  });
 
+  // Se a tela crescer para desktop com o menu aberto, volta ao estado normal
+  window.matchMedia('(min-width: 768px)').addEventListener('change', function (evento) {
+    if (evento.matches) fecharMenu();
+  });
+}
     if (botaoMaisInfo && blocoInfo) {
       botaoMaisInfo.addEventListener('click', function () {
         var escondido = blocoInfo.classList.toggle('escondido');
