@@ -57,7 +57,7 @@ body {
   overflow-x: clip;
 
   /* ===========================
-     FUNDO DO CAMINHÃO — SITE TODO
+    FUNDO DO CAMINHÃO — SITE TODO
      =========================== */
 
   background-image:
@@ -65,7 +65,7 @@ body {
       rgba(242, 242, 242, 0.78),
       rgba(242, 242, 242, 0.78)
     ),
-    url("imagens/fundo.jpg");
+    url("imagens/fundo.webp");
 
   background-size: cover;
   background-position: center top;
@@ -79,7 +79,7 @@ img {
 }
 
 /* ===========================
-   CABEÇALHO — flexbox
+  CABEÇALHO — flexbox
    =========================== */
 
 header {
@@ -813,7 +813,7 @@ footer p {
       rgba(17, 22, 17, 0.72),
       rgba(17, 22, 17, 0.72)
     ),
-    url("imagens/fundo.jpg");
+    url("imagens/fundo.webp");
 }
 
 [data-theme="dark"] section {
