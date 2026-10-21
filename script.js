@@ -18,6 +18,7 @@
     var botaoMaisInfo = document.getElementById('botao-mais-info');
     var blocoInfo = document.getElementById('bloco-info');
 
+    /* ---------- Modo escuro ---------- */
     if (botaoTema) {
       function atualizarBotaoTema() {
         var escuro = html.getAttribute('data-theme') === 'dark';
@@ -32,33 +33,35 @@
       atualizarBotaoTema();
     }
 
+    /* ---------- Menu mobile ---------- */
     if (botaoMenu && menuPrincipal) {
-  function fecharMenu() {
-    menuPrincipal.classList.remove('aberto');
-    botaoMenu.setAttribute('aria-expanded', 'false');
-  }
+      function fecharMenu() {
+        menuPrincipal.classList.remove('aberto');
+        botaoMenu.setAttribute('aria-expanded', 'false');
+      }
 
-  botaoMenu.addEventListener('click', function () {
-    var aberto = menuPrincipal.classList.toggle('aberto');
-    botaoMenu.setAttribute('aria-expanded', aberto ? 'true' : 'false');
-  });
+      botaoMenu.addEventListener('click', function () {
+        var aberto = menuPrincipal.classList.toggle('aberto');
+        botaoMenu.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+      });
 
-  menuPrincipal.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', fecharMenu);
-  });
+      menuPrincipal.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', fecharMenu);
+      });
 
-  document.addEventListener('keydown', function (evento) {
-    if (evento.key === 'Escape' && menuPrincipal.classList.contains('aberto')) {
-      fecharMenu();
-      botaoMenu.focus();
+      document.addEventListener('keydown', function (evento) {
+        if (evento.key === 'Escape' && menuPrincipal.classList.contains('aberto')) {
+          fecharMenu();
+          botaoMenu.focus();
+        }
+      });
+
+      window.matchMedia('(min-width: 768px)').addEventListener('change', function (evento) {
+        if (evento.matches) fecharMenu();
+      });
     }
-  });
 
-  // Se a tela crescer para desktop com o menu aberto, volta ao estado normal
-  window.matchMedia('(min-width: 768px)').addEventListener('change', function (evento) {
-    if (evento.matches) fecharMenu();
-  });
-}
+    /* ---------- Ver mais informações ---------- */
     if (botaoMaisInfo && blocoInfo) {
       botaoMaisInfo.addEventListener('click', function () {
         var escondido = blocoInfo.classList.toggle('escondido');
@@ -66,21 +69,32 @@
       });
     }
 
+    /* ---------- Troca de imagem (página Coleta) ---------- */
     [
-      { id: 'imagem-card', src: 'imagens/saco-lixo-comum.webp' },
-      { id: 'imagem-reciclavel', src: 'imagens/lixoreciclavel.jpg' },
+      { id: 'imagem-card', src: 'imagens/lixo_comum.png' },
+      { id: 'imagem-reciclavel', src: 'imagens/lixo_reciclavel.png' },
       { id: 'imagem-entulho', src: 'imagens/entulho.jpg' }
     ].forEach(function (configuracao) {
-      new Image().src = configuracao.src;
       var imagem = document.getElementById(configuracao.id);
       if (!imagem) return;
+
       var srcOriginal = imagem.getAttribute('src');
+      var alternativaCarregou = true;
+
       function mostrarImagemAlternativa() {
-        imagem.setAttribute('src', configuracao.src);
+        if (alternativaCarregou) imagem.setAttribute('src', configuracao.src);
       }
       function restaurarImagemOriginal() {
         imagem.setAttribute('src', srcOriginal);
       }
+
+      imagem.addEventListener('error', function () {
+        if (imagem.getAttribute('src') === configuracao.src) {
+          alternativaCarregou = false;
+          imagem.setAttribute('src', srcOriginal);
+        }
+      });
+
       imagem.addEventListener('mouseenter', mostrarImagemAlternativa);
       imagem.addEventListener('mouseleave', restaurarImagemOriginal);
       imagem.addEventListener('focus', mostrarImagemAlternativa);
