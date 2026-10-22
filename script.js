@@ -100,5 +100,20 @@
       imagem.addEventListener('focus', mostrarImagemAlternativa);
       imagem.addEventListener('blur', restaurarImagemOriginal);
     });
+
+    /* ---------- Vídeos: carrega só ao clicar (página Sobre) ---------- */
+    document.querySelectorAll('.video-embed[data-video-id]').forEach(function (caixa) {
+      var botao = caixa.querySelector('.video-botao');
+      if (!botao) return;
+      botao.addEventListener('click', function () {
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube-nocookie.com/embed/' + caixa.getAttribute('data-video-id') + '?autoplay=1';
+        iframe.title = caixa.getAttribute('data-titulo');
+        iframe.allow = 'autoplay; encrypted-media; fullscreen';
+        iframe.allowFullscreen = true;
+        caixa.replaceChildren(iframe);
+        iframe.focus();
+      });
+    });
   });
 })();

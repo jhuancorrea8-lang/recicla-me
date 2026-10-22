@@ -1115,3 +1115,46 @@ input[type="checkbox"].campo-invalido {
   border-color: #FF8A80;
   border-width: 2px;
 }
+/* ===========================
+   BOTÃO DE VÍDEO (carrega ao clicar)
+   =========================== */
+
+.video-embed[data-video-id] {
+  aspect-ratio: auto;
+  display: flex;
+  justify-content: center;
+  margin: 16px auto 12px;
+}
+
+.video-embed[data-video-id]:has(iframe) {
+  aspect-ratio: 16 / 9;
+}
+
+.video-botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 24px;
+  font: inherit;
+  font-weight: bold;
+  color: var(--branco);
+  background-color: var(--verde-escuro);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.video-botao:hover {
+  background-color: #145228;
+}
+
+.video-botao:focus-visible {
+  outline: 3px solid var(--azul);
+  outline-offset: 3px;
+}
+
+[data-theme="dark"] .video-botao:focus-visible {
+  outline-color: #9DB8FF;
+}
